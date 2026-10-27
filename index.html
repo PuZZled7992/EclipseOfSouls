@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eclipse of the Last Dawn</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="menu-screen" class="screen active">
+      <div class="panel title-panel">
+        <p class="eyebrow">Pixel Open World RPG Prototype</p>
+        <h1>Eclipse of the Last Dawn</h1>
+        <p class="subtitle">
+          A fractured kingdom. A dying sky. A single soul that can rewrite fate.
+        </p>
+        <button id="start-btn" class="primary-btn">Begin the Journey</button>
+      </div>
+    </div>
+
+    <div id="creation-screen" class="screen hidden">
+      <div class="panel creation-panel">
+        <h2>Customize Your Warden</h2>
+
+        <label for="player-name">Name</label>
+        <input id="player-name" type="text" maxlength="18" value="Aeris" />
+
+        <div class="field-group">
+          <label>Race</label>
+          <div id="race-options" class="race-options"></div>
+        </div>
+
+        <div class="field-group">
+          <label>Class</label>
+          <div id="class-preview" class="class-preview">Warden</div>
+        </div>
+
+        <div class="field-group stat-summary-box">
+          <h3>Starting Stats</h3>
+          <div id="stat-summary"></div>
+        </div>
+
+        <button id="launch-game-btn" class="primary-btn">Enter the Eclipse</button>
+      </div>
+    </div>
+
+    <div id="game-screen" class="screen hidden">
+      <div id="hud" class="hud">
+        <div class="hud-top">
+          <div class="stat-box">
+            <span>Hero</span>
+            <strong id="hud-name">Aeris</strong>
+          </div>
+          <div class="stat-box">
+            <span>Race</span>
+            <strong id="hud-race">Human</strong>
+          </div>
+          <div class="stat-box">
+            <span>Class</span>
+            <strong id="hud-class">Warden</strong>
+          </div>
+          <div class="stat-box">
+            <span>Region</span>
+            <strong id="hud-region">Shattered Capital</strong>
+          </div>
+        </div>
+
+        <div class="hud-bottom">
+          <div class="health-bar-wrap">
+            <span>HP</span>
+            <div class="bar"><div id="hp-bar" class="fill hp"></div></div>
+            <strong id="hp-text">100/100</strong>
+          </div>
+
+          <div class="health-bar-wrap">
+            <span>MP</span>
+            <div class="bar"><div id="mp-bar" class="fill mp"></div></div>
+            <strong id="mp-text">40/40</strong>
+          </div>
+        </div>
+      </div>
+
+      <canvas id="gameCanvas" width="960" height="540"></canvas>
+
+      <div id="floating-message" class="floating-message"></div>
+
+      <div id="story-panel" class="story-panel hidden"></div>
+
+      <div id="battle-overlay" class="battle-overlay hidden">
+        <div class="battle-box">
+          <h3 id="battle-title">Boss Encounter</h3>
+          <div class="boss-health-wrap">
+            <span id="battle-boss-name">Gorrath</span>
+            <div class="bar large"><div id="boss-bar" class="fill boss"></div></div>
+            <strong id="boss-text">0/0</strong>
+          </div>
+
+          <div class="battle-actions">
+            <button id="attack-btn">Strike</button>
+            <button id="dodge-btn">Dodge</button>
+            <button id="ability-btn">Soul Burst</button>
+          </div>
+
+          <p id="battle-log">The air trembles. The battle begins.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="end-screen" class="screen hidden">
+      <div class="panel end-panel">
+        <p class="eyebrow">Ending</p>
+        <h2 id="ending-title">The Dawn Returns</h2>
+        <p id="ending-text"></p>
+        <button id="restart-btn" class="primary-btn">New Game</button>
+      </div>
+    </div>
+
+    <script src="game.js"></script>
+  </body>
+</html>
